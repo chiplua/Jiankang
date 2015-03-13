@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/default_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.family.common.widget.TopBarView android:id="@id/topBarView_title_librarySecondNode" android:layout_width="fill_parent" android:layout_height="60.0dip" />
+    <ListView android:id="@id/listV_secondNode" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

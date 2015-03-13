@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="@drawable/bg_topbar" android:paddingBottom="5.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/dialog_margin" android:layout_marginLeft="5.0dip">
+        <TextView android:textSize="@dimen/font_size_32" android:textColor="@*android:color/white" android:id="@id/commondialog_title" android:paddingLeft="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageButton android:layout_gravity="center" android:id="@id/commondialog_cancel" android:background="@drawable/dialog_cancel_selector" android:padding="5.0dip" android:layout_width="@dimen/size_33.3dp" android:layout_height="@dimen/size_33.3dp" android:src="@drawable/btn_cancel" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textColor="@*android:color/white" android:id="@id/commondialog_message" android:paddingLeft="10.0dip" android:paddingTop="10.0dip" android:paddingBottom="10.0dip" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:layout_marginBottom="5.0dip" />
+    <ListView android:id="@id/commondialog_list" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="5.0dip" android:layout_marginRight="5.0dip" android:listSelector="@*android:color/transparent" android:divider="@*android:color/transparent" android:dividerHeight="5.0dip" />
+</LinearLayout>

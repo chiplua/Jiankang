@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:id="@id/whole_layout" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/hc_homepage_bg" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="6.0">
+        <com.family.common.widget.TopBarView android:id="@id/topBarView_title_hc_main" android:background="@color/title_bgcolor_main" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="5.0">
+            <ProgressBar android:id="@id/progressBar" android:layout_width="40.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/size_18dp" android:layout_marginTop="@dimen/size_3dp" android:layout_marginBottom="@dimen/size_3dp" android:progress="100" android:progressDrawable="@drawable/pbar_vertical_drawable" style="?android:attr/progressBarStyleHorizontal" />
+            <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent">
+                <TextView android:textColor="@*android:color/white" android:id="@id/tv_healthIndex" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/size_3dp" android:layout_marginTop="@dimen/size_15dp" android:layout_alignParentLeft="true" android:layout_alignParentTop="true" style="@style/tvStyleShadow" />
+                <ImageView android:id="@id/imgV_userIcon" android:background="@drawable/health_pic_small_tree" android:layout_width="@dimen/size_160dp" android:layout_height="@dimen/size_184dp" android:layout_marginLeft="@dimen/size_2dp" android:layout_marginBottom="@dimen/size_30dp" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" />
+                <TextSwitcher android:id="@id/textSwitcher" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/size_15dp" android:layout_marginRight="@dimen/size_13.3dp" android:layout_alignParentTop="true" android:layout_alignParentRight="true" />
+                <TextView android:textColor="@color/main_title_color" android:id="@id/info_high_scores" android:visibility="visible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="@dimen/size_20dp" android:layout_marginBottom="@dimen/size_15dp" android:text="@string/string_high_scores" android:singleLine="true" android:layout_alignParentRight="true" android:layout_alignParentBottom="true" />
+                <ImageView android:id="@id/imgV_big_btn" android:background="@drawable/big_btn_selector" android:layout_width="@dimen/size_140dp" android:layout_height="@dimen/size_140dp" android:layout_marginRight="@dimen/size_12dp" android:layout_above="@id/info_high_scores" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:background="@*android:color/white" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/size_6dp" android:layout_marginTop="@dimen/size_6dp" android:layout_marginRight="@dimen/size_6dp" android:layout_marginBottom="6.0dip" android:layout_weight="4.0">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/btn_bg_blue" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/icon_healthAlarm" android:layout_width="@dimen/size_72dp" android:layout_height="0.0dip" android:src="@drawable/icon_health_alarm" android:scaleType="centerCrop" android:layout_weight="3.0" />
+                    <TextView android:textColor="@*android:color/white" android:gravity="center" android:id="@id/info_healthAlarm" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="-5.0dip" android:text="@string/healthAlarm" android:layout_weight="2.0" style="@style/tvStyleShadow" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/hc_health_alarm" android:background="@drawable/hc_main_cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/size_6.6dp" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/button_green_bg" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/icon_healthLibrary" android:layout_width="@dimen/size_72dp" android:layout_height="0.0dip" android:src="@drawable/icon_health_book" android:scaleType="centerCrop" android:layout_weight="3.0" />
+                    <TextView android:textColor="@*android:color/white" android:gravity="center" android:id="@id/info_healthLibrary" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="-5.0dip" android:text="@string/healthLibrary" android:layout_weight="2.0" style="@style/tvStyleShadow" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/hc_health_library" android:background="@drawable/hc_main_cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+        </LinearLayout>
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_marginLeft="@dimen/size_6.6dp" android:layout_weight="1.0">
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/btn_bg_orange" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/icon_healthConsult" android:layout_width="@dimen/size_72dp" android:layout_height="0.0dip" android:src="@drawable/icon_health_consultation" android:scaleType="centerCrop" android:layout_weight="3.0" />
+                    <TextView android:textColor="@*android:color/white" android:gravity="center" android:id="@id/info_healthConsult" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="-5.0dip" android:text="@string/healthConsult" android:layout_weight="2.0" style="@style/tvStyleShadow" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/hc_health_consult" android:background="@drawable/hc_main_cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginTop="@dimen/size_6.6dp" android:layout_weight="1.0">
+                <LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/btn_bg_blue" android:layout_width="fill_parent" android:layout_height="fill_parent">
+                    <ImageView android:id="@id/icon_healthNews" android:layout_width="@dimen/size_72dp" android:layout_height="0.0dip" android:src="@drawable/icon_health_news" android:scaleType="centerCrop" android:layout_weight="3.0" />
+                    <TextView android:textColor="@*android:color/white" android:gravity="center" android:id="@id/info_healthNews" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_marginTop="-5.0dip" android:text="@string/healthNews" android:layout_weight="2.0" style="@style/tvStyleShadow" />
+                </LinearLayout>
+                <LinearLayout android:orientation="horizontal" android:id="@id/hc_health_news" android:background="@drawable/hc_main_cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

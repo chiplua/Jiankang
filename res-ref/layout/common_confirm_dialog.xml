@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:background="#ff484d54" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/size_13.3dp" android:layout_marginTop="@dimen/size_13.3dp" android:layout_marginRight="@dimen/size_13.3dp">
+        <TextView android:textSize="@dimen/font_size_32" android:textColor="@*android:color/white" android:id="@id/confirmDlg_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/confirmDlg_tip" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <ImageView android:id="@id/imgView_cancel" android:background="@drawable/dialog_cancel_selector" android:layout_width="@dimen/size_33.3dp" android:layout_height="@dimen/size_33.3dp" android:src="@drawable/btn_cancel" android:scaleType="fitXY" android:layout_alignParentRight="true" android:layout_centerVertical="true" />
+    </RelativeLayout>
+    <TextView android:textSize="@dimen/font_size_32" android:textColor="@color/confirmDlg_contentFontColor" android:id="@id/confirmDlg_content" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/size_13.3dp" android:layout_marginTop="@dimen/size_10dp" android:text="@string/confirmDlg_content" />
+    <Button android:textSize="@dimen/font_size_32" android:textColor="@*android:color/white" android:id="@id/confirmDlg_btn" android:background="@drawable/selector_confirm_btn" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="@dimen/size_10dp" android:layout_marginRight="6.0dip" android:layout_marginBottom="6.0dip" android:text="@string/confirmDlg_btnStr" />
+</LinearLayout>

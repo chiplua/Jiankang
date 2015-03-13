@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="drawable" name="bg_activity">#ffebedf2</item>
+    <item type="drawable" name="bg_dialog">#ff484d54</item>
+    <item type="drawable" name="bg_topbar">#ff484d54</item>
+    <item type="drawable" name="bg_transparent">#ff909090</item>
+    <item type="drawable" name="bg_red_normal">#ffe63535</item>
+    <item type="drawable" name="bg_red_pressed">#ffb82a2a</item>
+    <item type="drawable" name="bg_listview">#fff7f7f7</item>
+    <item type="drawable" name="bg_listviewitem_normal">#ffffffff</item>
+    <item type="drawable" name="bg_listviewitem_pressed">#ffe4e4e4</item>
+    <item type="drawable" name="bg_create_blue">#ffcceaff</item>
+    <item type="drawable" name="bg_create_green">#ffeaf9e5</item>
+    <item type="drawable" name="divider">#ff333333</item>
+    <item type="drawable" name="black_20">#33000000</item>
+    <item type="drawable" name="bg_activity_downloadMgr">#ffe6e6e6</item>
+    <item type="drawable" name="select_button_pressed">#fffd9e00</item>
+</resources>

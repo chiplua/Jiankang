@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:gravity="center_vertical" android:id="@id/linear_title" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="66.69998dip">
+        <TextView android:textSize="@dimen/size_33.3dp" android:textColor="@*android:color/white" android:id="@id/title_tipInfo" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:text="@string/selectDate" android:layout_weight="1.0" />
+        <LinearLayout android:id="@id/linear_title_calendar" android:background="@drawable/white_border" android:layout_width="@dimen/size_160dp" android:layout_height="@dimen/size_48dp" android:layout_marginRight="12.0dip">
+            <TextView android:textSize="@dimen/size_33.3dp" android:textColor="@*android:color/black" android:gravity="center" android:id="@id/title_solar" android:background="@*android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/solar" android:layout_weight="1.0" />
+            <TextView android:textSize="@dimen/size_33.3dp" android:textColor="@*android:color/white" android:gravity="center" android:id="@id/title_lunar" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/lunar" android:layout_weight="1.0" />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/containerForDateTime" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+</LinearLayout>

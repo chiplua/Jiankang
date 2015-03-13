@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.family.common.widget.TopBarView android:id="@id/titleView" style="@style/ruyiui_tobbar_layout" />
+    <RelativeLayout android:id="@id/delApkLayout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:id="@id/displaylayout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_above="@id/layout_delete" android:layout_alignParentTop="true">
+            <ListView android:id="@id/apkList" android:layout_width="fill_parent" android:layout_height="wrap_content" android:divider="@null" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:id="@id/layout_delete" android:background="#ff484d54" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+            <Button android:textSize="@dimen/font_size_28" android:textColor="@*android:color/white" android:id="@id/btn_dialog_set" android:background="@drawable/btn_bottom_del" android:layout_width="fill_parent" android:layout_height="60.0dip" android:layout_margin="6.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:id="@id/noApkLayout" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="24.0sp" android:textColor="@*android:color/background_dark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/noApkToDelete" />
+    </LinearLayout>
+</LinearLayout>

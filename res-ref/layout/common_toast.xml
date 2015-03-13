@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/new_popup_tip_2_second" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/size_8dp" android:layout_marginRight="@dimen/size_8dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="25.0sp" android:textColor="@*android:color/white" android:layout_gravity="center" android:id="@id/message" android:layout_width="wrap_content" android:layout_height="0.0dip" android:layout_margin="10.0dip" android:layout_weight="1.0" />
+</LinearLayout>

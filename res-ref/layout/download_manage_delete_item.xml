@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/apkLayout_apkManager" android:background="@drawable/bg_selector_list_item" android:descendantFocusability="blocksDescendants" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/apk_icon" android:layout_width="@dimen/hyy_icon_size" android:layout_height="@dimen/hyy_icon_size" android:layout_marginLeft="@dimen/size_6.6dp" android:layout_marginTop="@dimen/size_15dp" android:layout_marginBottom="@dimen/size_15dp" android:src="@drawable/icon_apk_72" android:scaleType="fitXY" />
+    <LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="fill_parent" android:layout_weight="1.0">
+        <TextView android:textColor="@*android:color/black" android:ellipsize="end" android:id="@id/apk_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hyy_margin" android:text="应用名称" android:singleLine="true" style="@style/shadow_white" />
+        <TextView android:textColor="#ff666666" android:ellipsize="end" android:id="@id/apk_size" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/hyy_margin" android:text="3.8M" android:singleLine="true" style="@style/shadow_white" />
+    </LinearLayout>
+    <View android:background="#ffe6e6e6" android:layout_width="2.0dip" android:layout_height="fill_parent" android:layout_marginTop="14.0dip" android:layout_marginBottom="14.0dip" />
+    <ImageView android:gravity="center" android:id="@id/imgV_state" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_marginLeft="@dimen/size_6.6dp" android:layout_marginRight="@dimen/size_6.6dp" android:src="@drawable/check_btn_false" />
+</LinearLayout>

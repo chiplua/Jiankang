@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#ffe6e6e6" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.family.common.widget.TopBarView android:id="@id/titleView" style="@style/ruyiui_tobbar_layout" />
+    <LinearLayout android:gravity="center" android:id="@id/lLayoutNoDownloadTask" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <TextView android:textSize="24.0sp" android:textColor="@*android:color/background_dark" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/noDownloadTask" />
+    </LinearLayout>
+    <ListView android:id="@id/download_manage_list" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</LinearLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/appIcon" android:layout_width="@dimen/hyy_icon_size" android:layout_height="@dimen/hyy_icon_size" android:layout_marginLeft="@dimen/size_6.6dp" android:layout_marginTop="@dimen/size_15dp" android:layout_marginBottom="@dimen/size_15dp" android:src="@drawable/setting_icon_download" android:scaleType="fitXY" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="8.0dip" android:layout_marginRight="8.0dip">
+        <TextView android:textSize="20.0sp" android:textColor="@*android:color/white" android:id="@id/notice_appName" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/notif_AppName" />
+        <ProgressBar android:id="@id/notice_pBar" android:layout_width="fill_parent" android:layout_height="6.0dip" android:layout_marginTop="2.0dip" android:progressDrawable="@drawable/progressbar_download" style="?android:attr/progressBarStyleHorizontal" />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="15.0sp" android:textColor="@*android:color/white" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="@string/notif_Downloading" android:layout_weight="1.0" />
+            <TextView android:textSize="15.0sp" android:textColor="@*android:color/white" android:id="@id/downloadSpeed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="400K/s" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

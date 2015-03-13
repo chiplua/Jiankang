@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_gravity="center_vertical" android:id="@id/settingsview_Ry" android:background="@drawable/listview_item_selector" android:layout_width="fill_parent" android:layout_height="wrap_content" android:minHeight="70.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/settingsview_iconImg" android:visibility="gone" android:layout_width="@dimen/setting_view_icon_size" android:layout_height="@dimen/setting_view_icon_size" android:layout_marginLeft="@dimen/cell_margin" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+    <TextView android:textSize="@dimen/setting_view_info_size" android:textColor="@drawable/settingsview_selector_color" android:gravity="left|center" android:id="@id/settingsview_titleTv" android:paddingLeft="10.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/right_layout" android:layout_toRightOf="@id/settingsview_iconImg" android:layout_centerVertical="true" />
+    <LinearLayout android:gravity="right|center" android:orientation="horizontal" android:id="@id/right_layout" android:paddingRight="10.0dip" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <TextView android:textSize="@dimen/setting_view_state_size" android:textColor="@color/setting_info_color" android:gravity="right|center" android:id="@id/settingsview_stateTv" android:visibility="gone" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_marginRight="5.0dip" android:singleLine="true" android:layout_weight="1.0" />
+        <ImageView android:gravity="center" android:id="@id/settingsview_arrowImg" android:background="@drawable/item_right_arrow" android:visibility="gone" android:layout_width="18.0dip" android:layout_height="27.0dip" android:layout_marginRight="10.0dip" android:scaleType="centerInside" />
+    </LinearLayout>
+</RelativeLayout>

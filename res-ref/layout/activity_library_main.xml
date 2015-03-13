@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/default_background" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.family.common.widget.TopBarView android:id="@id/topBarView_title_libraryMain" android:background="@drawable/title_bg_library" android:layout_width="fill_parent" android:layout_height="60.0dip" />
+    <com.family.common.widget.setting.SettingView android:id="@id/settingView_reportHelper" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/size_15dp" />
+    <View style="@style/settings_divider" />
+    <com.family.common.widget.setting.SettingView android:id="@id/settingView_commonDisease" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <View style="@style/settings_divider" />
+    <com.family.common.widget.setting.SettingView android:id="@id/settingView_child" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.family.common.widget.setting.SettingView android:id="@id/settingView_favorite" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/size_15dp" />
+</LinearLayout>

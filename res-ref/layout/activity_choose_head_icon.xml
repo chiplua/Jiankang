@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/defaultBgColor" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.family.common.widget.TopBarView android:id="@id/topBarView_title_choose_icon" android:layout_width="fill_parent" android:layout_height="60.0dip" />
+    <GridView android:id="@id/img_grid" android:background="@null" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_marginLeft="@dimen/ruyi_margin" android:layout_marginTop="@dimen/ruyi_margin" android:layout_marginRight="@dimen/ruyi_margin" android:listSelector="@*android:color/transparent" android:cacheColorHint="@null" android:stretchMode="columnWidth" android:numColumns="3" android:layout_weight="1.0" />
+</LinearLayout>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@id/title_layout" android:background="@drawable/tital_bar_bg" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@id/cancelLayout" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentLeft="true" android:layout_centerVertical="true">
+        <ImageView android:id="@id/cancel" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_cancel_selector" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <TextView android:textColor="@*android:color/white" android:ellipsize="marquee" android:gravity="center" android:id="@id/title" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content" android:singleLine="true" android:layout_toLeftOf="@id/optionLayout" android:layout_toRightOf="@id/cancelLayout" android:layout_centerInParent="true" />
+    <RelativeLayout android:id="@id/optionLayout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_marginRight="8.0dip" android:layout_alignParentRight="true">
+        <ImageView android:id="@id/optionImgBtn" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/title_option_selector" android:layout_centerInParent="true" />
+    </RelativeLayout>
+    <LinearLayout android:orientation="horizontal" android:id="@id/SelectLayout" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="fill_parent" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+        <TextView android:id="@id/divider" android:background="#ff333333" android:layout_width="1.0dip" android:layout_height="fill_parent" />
+        <TextView android:textColor="@*android:color/white" android:gravity="center" android:layout_gravity="center_vertical" android:id="@id/option_text" android:background="@drawable/cover_selector" android:paddingLeft="1.0dip" android:paddingRight="1.0dip" android:layout_width="@dimen/option_button_width" android:layout_height="fill_parent" />
+    </LinearLayout>
+</RelativeLayout>

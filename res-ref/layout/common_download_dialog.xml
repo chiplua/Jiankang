@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_gravity="bottom" android:orientation="vertical" android:id="@id/dialog_option_linearlayout" android:background="#ff484d54" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="@dimen/font_size_33.3" android:textColor="@*android:color/white" android:id="@id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:text="@string/downloading" android:layout_alignParentLeft="true" android:layout_centerVertical="true" />
+        <FrameLayout android:gravity="center" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginRight="6.0dip" android:layout_alignParentRight="true" android:layout_centerVertical="true">
+            <Button android:textSize="@dimen/font_size_24" android:textColor="@*android:color/white" android:id="@id/btn_stop_download_back" android:background="@drawable/btn_dialog_cancel" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/stopDownload" />
+            <Button android:id="@id/btn_stop_download" android:background="@drawable/cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+        </FrameLayout>
+    </RelativeLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <ProgressBar android:id="@id/progressBar" android:layout_width="fill_parent" android:layout_height="13.599976dip" android:layout_marginLeft="6.0dip" android:layout_marginTop="12.0dip" android:layout_marginRight="6.0dip" android:max="100" android:progress="50" android:secondaryProgress="70" android:progressDrawable="@drawable/progressbar_color" style="?android:attr/progressBarStyleHorizontal" />
+        <TextView android:textSize="@dimen/font_size_32" android:textColor="#ffe7eaeb" android:id="@id/textView_progress" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6.0dip" android:layout_marginTop="16.0dip" android:text="@string/percent0" />
+    </LinearLayout>
+    <FrameLayout android:gravity="center" android:id="@id/frame_download" android:layout_width="fill_parent" android:layout_height="80.0dip" android:layout_margin="6.0dip">
+        <Button android:textSize="@dimen/font_size_32" android:textColor="@color/btn_hide" android:id="@id/btn_hide_install_back" android:background="@*android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:text="@string/hideDownload" />
+        <Button android:textSize="@dimen/font_size_28" android:id="@id/btn_hide_install" android:background="@drawable/cover_selector" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </FrameLayout>
+</LinearLayout>
