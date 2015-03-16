@@ -17,3 +17,8 @@ git push -u origin master
 …or import code from another repository
 
 You can initialize this repository with code from a Subversion, Mercurial, or TFS project.
+
+#compile java file
+javac -d ./ *.java
+java com.chiplua.MethodA
+
