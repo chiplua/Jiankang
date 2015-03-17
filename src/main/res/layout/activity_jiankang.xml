@@ -7,4 +7,10 @@
     android:background="@drawable/default_background"
     tools:context=".JiankangActivity">
 
+    <ListView
+        android:id="@+id/library_list"
+        android:footerDividersEnabled="true"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+    </ListView>
 </RelativeLayout>
