@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">健康手册</string>
+
+    <string name="action_settings">设置</string>
+<!--    <string name="title_activity_laboratory_assistant">化验单助手</string>
+    <string name="title_activity_common_illness">常见病介绍</string>
+    <string name="title_activity_child_rearing">育儿介绍</string>
+    <string name="title_activity_favorite">收藏夹</string>-->
+    <string name="laboratory_assistant">化验单助手</string>
+    <string name="healty_library">健康图书馆</string>
+</resources>
