@@ -4,14 +4,32 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 public class ChildRearingActivity extends Activity {
+    private static TextView titleText = null;
+    private static ImageButton backButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_child_rearing);
+        this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+
+        titleText = (TextView) findViewById(R.id.title_name);
+        titleText.setText(R.string.child_rearing);
+        backButton = (ImageButton) findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

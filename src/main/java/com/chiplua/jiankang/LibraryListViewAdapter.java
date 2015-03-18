@@ -88,9 +88,11 @@ public class LibraryListViewAdapter extends BaseAdapter {
                 case 2:
                     intent.setClass(mContext, ChildRearingActivity.class);
                     mContext.startActivity(intent);
+                    break;
                 case 3:
                     intent.setClass(mContext, FavoriteActivity.class);
                     mContext.startActivity(intent);
+                    break;
                 }
             }
         });

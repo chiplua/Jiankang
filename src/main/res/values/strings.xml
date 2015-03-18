@@ -10,4 +10,7 @@
     -->
     <string name="laboratory_assistant">Laboratory assistant</string>
     <string name="healty_library">Healty library</string>
+    <string name="common_illness">Common illness</string>
+    <string name="child_rearing">Child rearing</string>
+    <string name="favorite_file">Favorite file</string>
 </resources>

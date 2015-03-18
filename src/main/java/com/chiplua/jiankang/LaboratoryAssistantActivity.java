@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 
 public class LaboratoryAssistantActivity extends Activity {
     private static TextView titleText = null;
+    private static ImageButton backButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +23,13 @@ public class LaboratoryAssistantActivity extends Activity {
 
         titleText = (TextView) findViewById(R.id.title_name);
         titleText.setText(R.string.laboratory_assistant);
+        backButton = (ImageButton) findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

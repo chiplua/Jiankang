@@ -4,14 +4,32 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageButton;
+import android.widget.TextView;
 
 
 public class CommonIllnessActivity extends Activity {
+    private static TextView commonIllText = null;
+    private static ImageButton backButton = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
         setContentView(R.layout.activity_common_illness);
+        this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+
+        commonIllText = (TextView) findViewById(R.id.title_name);
+        commonIllText.setText(R.string.common_illness);
+        backButton = (ImageButton) findViewById(R.id.back);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
 

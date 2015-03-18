@@ -8,4 +8,7 @@
     <string name="title_activity_favorite">收藏夹</string>-->
     <string name="laboratory_assistant">化验单助手</string>
     <string name="healty_library">健康图书馆</string>
+    <string name="common_illness">常见病介绍</string>
+    <string name="child_rearing">育儿介绍</string>
+    <string name="favorite_file">收藏夹</string>
 </resources>
