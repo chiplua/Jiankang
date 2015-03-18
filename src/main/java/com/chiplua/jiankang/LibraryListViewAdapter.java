@@ -1,6 +1,7 @@
 package com.chiplua.jiankang;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,7 @@ public class LibraryListViewAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         ListItemView  listItemView = null;
         if (convertView == null) {
             listItemView = new ListItemView();
@@ -72,6 +73,25 @@ public class LibraryListViewAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Log.d(TAG, "onClick");
+                Intent intent = new Intent();
+                int id = v.getId();
+                Log.d(TAG, "id = " + id + "position = " + position);
+                switch (position) {
+                case 0:
+                    intent.setClass(mContext, LaboratoryAssistantActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                case 1:
+                    intent.setClass(mContext, CommonIllnessActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                case 2:
+                    intent.setClass(mContext, ChildRearingActivity.class);
+                    mContext.startActivity(intent);
+                case 3:
+                    intent.setClass(mContext, FavoriteActivity.class);
+                    mContext.startActivity(intent);
+                }
             }
         });
         return convertView;
