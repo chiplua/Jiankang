@@ -15,20 +15,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LaboratoryAssistantActivity"
-            android:label="@string/title_activity_laboratory_assistant" >
+            android:name=".LaboratoryAssistantActivity" >
         </activity>
         <activity
-            android:name=".CommonIllnessActivity"
-            android:label="@string/title_activity_common_illness" >
+            android:name=".CommonIllnessActivity" >
         </activity>
         <activity
-            android:name=".ChildRearingActivity"
-            android:label="@string/title_activity_child_rearing" >
+            android:name=".ChildRearingActivity" >
         </activity>
         <activity
-            android:name=".FavoriteActivity"
-            android:label="@string/title_activity_favorite" >
+            android:name=".FavoriteActivity" >
         </activity>
     </application>
 
