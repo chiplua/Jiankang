@@ -3,4 +3,11 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <!--<string name="title_activity_laboratory_assistant">LaboratoryAssistantActivity</string>
+    <string name="title_activity_common_illness">CommonIllnessActivity</string>
+    <string name="title_activity_child_rearing">ChildRearingActivity</string>
+    <string name="title_activity_favorite">FavoriteActivity</string>
+    -->
+    <string name="laboratory_assistant">Laboratory assistant</string>
+    <string name="healty_library">Healty library</string>
 </resources>
