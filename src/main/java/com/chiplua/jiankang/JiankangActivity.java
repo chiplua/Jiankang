@@ -18,6 +18,7 @@ import java.util.Map;
 
 
 public class JiankangActivity extends Activity {
+    public final static String PACKAGE_NAME = "com.chiplua.jiankang";
     private ListView libraryList = null;
     private static ImageButton backButton = null;
     private static TextView titleName = null;
