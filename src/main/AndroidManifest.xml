@@ -14,17 +14,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".LaboratoryAssistantActivity" >
+        <activity android:name=".LaboratoryAssistantActivity" >
+        </activity>
+        <activity android:name=".CommonIllnessActivity" >
+        </activity>
+        <activity android:name=".ChildRearingActivity" >
+        </activity>
+        <activity android:name=".FavoriteActivity" >
         </activity>
         <activity
-            android:name=".CommonIllnessActivity" >
+            android:name=".CommonSecondActivity"
+            android:label="@string/title_activity_common_second" >
         </activity>
         <activity
-            android:name=".ChildRearingActivity" >
-        </activity>
-        <activity
-            android:name=".FavoriteActivity" >
+            android:name=".CommonDetailActivity"
+            android:label="@string/title_activity_common_detail" >
         </activity>
     </application>
 

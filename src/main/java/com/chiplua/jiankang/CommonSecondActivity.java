@@ -2,6 +2,7 @@ package com.chiplua.jiankang;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,63 +17,60 @@ import java.util.List;
 import java.util.Map;
 
 
-public class LaboratoryAssistantActivity extends Activity {
-    private final static String TAG = "LaboratoryAssistantActivity";
+public class CommonSecondActivity extends Activity {
+    private static final String TAG = "CommonSecondActivity";
     private static TextView titleText = null;
     private static ImageButton backButton = null;
-    private static ListView listView = null;
     private static List<Map<String, Object>> listItems = null;
-    private static ListViewAdapter listViewAdapter = null;
-    private static List<Map<String, Object>> xyz = null;
+    private static ListView listView = null;
+    private static ListViewSecondAdapter listViewSecondAdapter = null;
+    private static String selectName = null;
+    private static String lrID = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.common_list_item_adapter);
+        setContentView(R.layout.activity_common_second);
         this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
+        selectName = getIntent().getStringExtra("selectName");
+        lrID = SQLOperation.getReportRelationMapLRID(selectName);
 
+        Log.d(TAG, "selectName is " + selectName);
         titleText = (TextView) findViewById(R.id.title_name);
-        titleText.setText(R.string.laboratory_assistant);
+        titleText.setText(selectName);
         backButton = (ImageButton) findViewById(R.id.back);
-        //backButton.setVisibility(View.GONE);
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        listView = (ListView) findViewById(R.id.list_item_library);
-        listItems = getListItems();
-        listViewAdapter = new ListViewAdapter(this, listItems);
-        listView.setAdapter(listViewAdapter);
 
-        /*xyz = SQLOperation.getReportRelationMap(String.valueOf(1));
-        for (Map<String, Object> m : xyz) {
-            for (String k : m.keySet()) {
-                Log.d(TAG, "key: " + k + " value: " + m.get(k));
-            }
-        }*/
+        listView = (ListView) findViewById(R.id.list_items);
+        listItems = getListItems(lrID);
+        listViewSecondAdapter = new ListViewSecondAdapter(this, listItems);
+        listView.setAdapter(listViewSecondAdapter);
     }
 
-
-
-    private List<Map<String, Object>> getListItems() {
+    private List<Map<String, Object>> getListItems(String lr) {
+        List<Map<String, Object>> sqlList = SQLOperation.getReportRelationMap(lrID);
         List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
-
-        for(int i = 0; i < SQLOperation.getLaboratorAssistantCount(); i++) {
-            Map<String, Object> map = new HashMap<String, Object>();
-            map.put("text", SQLOperation.getReportOutline(String.valueOf(i+1))[0]);       //图片资源
-            map.put("into", R.drawable.right_arrow);       //物品标题
-            listItems.add(map);
+        for (Map<String, Object> m : sqlList) {
+            for (String k : m.keySet()) {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("text", m.get(k));
+                map.put("into", R.drawable.right_arrow);
+                listItems.add(map);
+                //Log.d(TAG, "key: " + k + " value: " + m.get(k));
+            }
         }
         return listItems;
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_laboratory_assistant, menu);
+        getMenuInflater().inflate(R.menu.menu_common_second, menu);
         return true;
     }
 

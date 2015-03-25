@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by chiplua_client on 15-3-19.
+ * Created by chiplua_client on 15-3-25.
  */
-public class ListViewAdapter extends BaseAdapter {
-    private static final String TAG = "ListViewAdapter";
+public class ListViewSecondAdapter extends BaseAdapter {
+    private static final String TAG = "ListViewSecondAdapter";
     private static Context mContext = null;
     private List<Map<String, Object>> mListItems;
     private LayoutInflater listContainer;
@@ -27,7 +27,7 @@ public class ListViewAdapter extends BaseAdapter {
         public ImageView into;
     }
 
-    public ListViewAdapter(Context context, List<Map<String, Object>> listItems) {
+    public ListViewSecondAdapter(Context context, List<Map<String, Object>> listItems) {
         mContext = context;
         mListItems = listItems;
         listContainer= LayoutInflater.from(mContext);
@@ -80,17 +80,15 @@ public class ListViewAdapter extends BaseAdapter {
 
                 Intent intentCommon = new Intent();
                 intentCommon.putExtra("selectName", selectName);
-                intentCommon.setClass(mContext, CommonSecondActivity.class);
+                intentCommon.setClass(mContext, CommonDetailActivity.class);
                 mContext.startActivity(intentCommon);
 
-/*
-                List<Map<String, Object>> xyz = SQLOperation.getReportRelationMap(lrID);
+                /*List<Map<String, Object>> xyz = SQLOperation.getReportRelationMap(lrID);
                 for (Map<String, Object> m : xyz) {
                     for (String k : m.keySet()) {
                         Log.d(TAG, "key: " + k + " value: " + m.get(k));
                     }
-                }
-*/
+                }*/
 
             }
         });

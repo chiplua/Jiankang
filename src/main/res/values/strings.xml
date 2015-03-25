@@ -13,4 +13,7 @@
     <string name="common_illness">Common illness</string>
     <string name="child_rearing">Child rearing</string>
     <string name="favorite_file">Favorite file</string>
+    <string name="title_activity_common_second">CommonSecondActivity</string>
+    <string name="detail">Detail</string>
+    <string name="title_activity_common_detail">CommonDetailActivity</string>
 </resources>

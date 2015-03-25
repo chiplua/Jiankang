@@ -9,6 +9,9 @@
         android:id="@+id/library_name"
         android:textSize="30dp"
         android:textColor="#333333"
+        android:singleLine="true"
+        android:maxEms="8"
+        android:ellipsize="end"
         android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
