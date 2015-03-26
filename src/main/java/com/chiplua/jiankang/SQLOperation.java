@@ -21,10 +21,10 @@ public class SQLOperation {
     private final static String REPORTOUTLINENAME = "name";
     private final static String REPORTOUTLINESORT = "sort";
     private final static String REPORTOUTLINEORDERNO = "orderNo";
-
     private final static String REPORTRELATIONMAPLR_ID = "lr_id";
     private final static String REPORTRELATIONMAPCA_ID = "ca_id";
     private final static String REPORTRELATIONMAPNAME = "name";
+    private final static String REPORTDETAILSCONTENT = "content";
 
     private static SQLiteDatabase openDatabase() {
         File dir = new File(DATABASE_PATH);
@@ -167,6 +167,41 @@ public class SQLOperation {
                 }
                 do {
                     data = c.getString(IDIndex);
+                    Log.d(TAG, "data = " + data);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static String getReportDetailsContent(String selectName) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from report_details where name='"+ selectName +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int contentIndex;
+                try {
+                    contentIndex = c.getColumnIndexOrThrow(REPORTDETAILSCONTENT);
+                } catch (IllegalArgumentException e) {
+                    contentIndex = 4;
+                }
+                do {
+                    data = c.getString(contentIndex);
                     Log.d(TAG, "data = " + data);
                 } while (c.moveToNext());
             }

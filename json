@@ -1,0 +1,44 @@
+{
+ "bodyheader":" <div class=\"objectName\">\r\n\r\n\r\n\t\t\t\t\t<span class=\"icon2\">乙型肝炎e抗体<\/span>\r\n\r\n\r\n\t\t\t\t<\/div>\r\n\r\n",
+ "data":[
+    {
+    "content":"<p> 乙型肝炎病毒e抗体(HBeAb)是机体内对应HBeAg的抗体，它的出现证明机体对HBeAg有一定的免疫清除能力。<\/p>\r\n",
+    "title":"<span class=\"item\">乙型肝炎e抗体介绍<\/span>：<br />"
+    },
+
+    {
+    "content":"<p>　　Cutoff值计算COV=阴性对照OD值&times;0.3。<\/p>\r\n\r\n<p>　　样品OD值&ge;COV为阴性，样品OD值小于COV为阳性。<\/p>\r\n",
+    "title":"<span class=\"item\">乙型肝炎e抗体正常值<\/span>：<br />"
+      },
+
+    {
+    "content":"<p>　当HBeAg转阴，伴有HBeAb转阳者常提示HBV复制停止或明显减弱，传染性并较弱，是急性乙肝病情好转，
+    预后良好的征象。但pre-C区基因变异可产生HBeAg阴转的HBV感染，HBeAb可呈阳性，病毒仍复制活跃，病
+    变可持续进展。<\/p>\r\n",
+    "title":"<span class=\"item\">乙型肝炎e抗体临床意义<\/span>：<br />"
+    },
+
+    {
+    "content":"<p>
+    (1)、试剂使用前应摇匀，并弃去1-2滴后垂直滴加，注意均匀用力。<\/p>\r\n\r\n<p>　　
+    (2)、从冷藏环境中取出的试剂盒应室温平衡30min再进行测试，余者应及时封存，置冰箱内储藏备用。<\/p>\r\n\r\n<p>　　
+    (3)、冷藏的待查标本需置室温平衡30min，再可检测。<\/p>\r\n\r\n<p>　　
+    (4)、待检标本不可用NaN3防腐。<\/p>\r\n",
+    "title":"<span class=\"item\">乙型肝炎e抗体注意事项<\/span>：<br />"
+    },
+
+    {
+    "content":"<p>　　暂无相关信息 <\/p>\r\n"
+    "title":"<span class=\"item\">乙型肝炎e抗体检查过程<\/span>：<br />"
+    },
+
+    {
+    "content":"<p>　　急性无黄疸型肝炎，抗体<\/p>",
+    "title":"相关疾病"
+    },
+
+    {
+    "content":"<p>　　暂无相关信息<\/p>",
+    "title":"相关症状"
+    }
+ ]}
