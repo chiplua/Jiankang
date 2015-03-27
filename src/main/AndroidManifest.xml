@@ -30,6 +30,10 @@
             android:name=".CommonDetailActivity"
             android:label="@string/title_activity_common_detail" >
         </activity>
+        <activity
+            android:name=".CommonDiseaseDetailCommonActivity"
+            android:label="@string/title_activity_common_disease_detail_common" >
+        </activity>
     </application>
 
 </manifest>

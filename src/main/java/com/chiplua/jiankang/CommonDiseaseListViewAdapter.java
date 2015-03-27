@@ -69,22 +69,16 @@ public class CommonDiseaseListViewAdapter extends BaseAdapter {
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-/*
                 Intent intent = new Intent();
                 int id = v.getId();
                 String selectName = (String)mListItems.get(position).get("text");
-                String lrID;
                 Log.d(TAG, "U pressed is " + selectName);
                 Log.d(TAG, "id = " + id + " position = " + position);
-                lrID = SQLOperation.getReportRelationMapLRID(selectName);
-                Log.d(TAG, "lrID is " + lrID);
 
                 Intent intentCommon = new Intent();
                 intentCommon.putExtra("selectName", selectName);
-                intentCommon.setClass(mContext, CommonSecondActivity.class);
+                intentCommon.setClass(mContext, CommonDiseaseDetailCommonActivity.class);
                 mContext.startActivity(intentCommon);
-*/
-
             }
         });
         return convertView;
