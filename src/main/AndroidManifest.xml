@@ -16,7 +16,7 @@
         </activity>
         <activity android:name=".LaboratoryAssistantActivity" >
         </activity>
-        <activity android:name=".CommonIllnessActivity" >
+        <activity android:name=".CommonDiseaseActivity" >
         </activity>
         <activity android:name=".ChildRearingActivity" >
         </activity>

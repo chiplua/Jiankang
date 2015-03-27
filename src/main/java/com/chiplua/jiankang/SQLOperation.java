@@ -25,6 +25,8 @@ public class SQLOperation {
     private final static String REPORTRELATIONMAPCA_ID = "ca_id";
     private final static String REPORTRELATIONMAPNAME = "name";
     private final static String REPORTDETAILSCONTENT = "content";
+    private final static String COMMONDISEASENAME = "name";
+    private final static String COMMONDISEASEDESC = "contentDesc";
 
     private static SQLiteDatabase openDatabase() {
         File dir = new File(DATABASE_PATH);
@@ -216,6 +218,87 @@ public class SQLOperation {
             }
         }
         return data;
+    }
+
+    public static String getCommonDiseaseName(String id) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from common_disease where id='"+ id +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int nameIndex;
+                try {
+                    nameIndex = c.getColumnIndexOrThrow(COMMONDISEASENAME);
+                } catch (IllegalArgumentException e) {
+                    nameIndex = 2;
+                }
+                do {
+                    data = c.getString(nameIndex);
+                    Log.d(TAG, "data = " + data);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static String getCommonDiseaseContent(String name) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from common_disease where name='"+ name +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int contentIndex;
+                try {
+                    contentIndex = c.getColumnIndexOrThrow(COMMONDISEASEDESC);
+                } catch (IllegalArgumentException e) {
+                    contentIndex = 3;
+                }
+                do {
+                    data = c.getString(contentIndex);
+                    Log.d(TAG, "data = " + data);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static int getCommonDiseaseCount() {
+        SQLiteDatabase db = openDatabase();
+        String sql = "select * from common_disease";
+        Cursor cs = db.rawQuery(sql, null);
+
+        if (cs.moveToFirst()) {
+            return cs.getCount();
+        }
+        return 0;
     }
 
 }

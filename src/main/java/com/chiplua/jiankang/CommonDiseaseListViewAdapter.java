@@ -14,21 +14,20 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by chiplua_client on 15-3-17.
+ * Created by chiplua_client on 15-3-27.
  */
-public class LibraryListViewAdapter extends BaseAdapter {
-    private static final String TAG = "LibraryListViewAdapter";
+public class CommonDiseaseListViewAdapter extends BaseAdapter {
+    private static final String TAG = "CommonDiseaseListViewAdapter";
     private static Context mContext = null;
     private List<Map<String, Object>> mListItems;
     private LayoutInflater listContainer;
 
     public final class ListItemView {
-        public ImageView image;
         public TextView text;
         public ImageView into;
     }
 
-    public LibraryListViewAdapter(Context context, List<Map<String, Object>> listItems) {
+    public CommonDiseaseListViewAdapter(Context context, List<Map<String, Object>> listItems) {
         mContext = context;
         mListItems = listItems;
         listContainer= LayoutInflater.from(mContext);
@@ -54,9 +53,8 @@ public class LibraryListViewAdapter extends BaseAdapter {
         ListItemView  listItemView = null;
         if (convertView == null) {
             listItemView = new ListItemView();
-            convertView = listContainer.inflate(R.layout.list_item, null);
+            convertView = listContainer.inflate(R.layout.list_item_library, null);
 
-            listItemView.image = (ImageView) convertView.findViewById(R.id.image_item);
             listItemView.text = (TextView) convertView.findViewById(R.id.library_name);
             listItemView.into = (ImageView) convertView.findViewById(R.id.into_item);
 
@@ -65,35 +63,28 @@ public class LibraryListViewAdapter extends BaseAdapter {
             listItemView = (ListItemView)convertView.getTag();
         }
 
-        listItemView.image.setBackgroundResource((Integer) mListItems.get(position).get("image"));
         listItemView.text.setText((String) mListItems.get(position).get("text"));
         listItemView.into.setBackgroundResource((Integer) mListItems.get(position).get("into"));
 
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d(TAG, "onClick");
+/*
                 Intent intent = new Intent();
                 int id = v.getId();
-                Log.d(TAG, "id = " + id + "position = " + position);
-                switch (position) {
-                case 0:
-                    intent.setClass(mContext, LaboratoryAssistantActivity.class);
-                    mContext.startActivity(intent);
-                    break;
-                case 1:
-                    intent.setClass(mContext, CommonDiseaseActivity.class);
-                    mContext.startActivity(intent);
-                    break;
-                case 2:
-                    intent.setClass(mContext, ChildRearingActivity.class);
-                    mContext.startActivity(intent);
-                    break;
-                case 3:
-                    intent.setClass(mContext, FavoriteActivity.class);
-                    mContext.startActivity(intent);
-                    break;
-                }
+                String selectName = (String)mListItems.get(position).get("text");
+                String lrID;
+                Log.d(TAG, "U pressed is " + selectName);
+                Log.d(TAG, "id = " + id + " position = " + position);
+                lrID = SQLOperation.getReportRelationMapLRID(selectName);
+                Log.d(TAG, "lrID is " + lrID);
+
+                Intent intentCommon = new Intent();
+                intentCommon.putExtra("selectName", selectName);
+                intentCommon.setClass(mContext, CommonSecondActivity.class);
+                mContext.startActivity(intentCommon);
+*/
+
             }
         });
         return convertView;

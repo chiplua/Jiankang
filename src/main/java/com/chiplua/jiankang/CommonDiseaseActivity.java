@@ -7,18 +7,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-public class CommonIllnessActivity extends Activity {
+
+public class CommonDiseaseActivity extends Activity {
     private static TextView commonIllText = null;
     private static ImageButton backButton = null;
+    private static ListView listView = null;
+    private static List<Map<String, Object>> listItems = null;
+    private static CommonDiseaseListViewAdapter commonDiseaseListViewAdapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.activity_common_illness);
+        setContentView(R.layout.common_list_item_adapter);
         this.getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
 
         commonIllText = (TextView) findViewById(R.id.title_name);
@@ -30,6 +39,12 @@ public class CommonIllnessActivity extends Activity {
                 finish();
             }
         });
+
+        listView = (ListView) findViewById(R.id.list_item_library);
+        listItems = getListItems();
+        commonDiseaseListViewAdapter = new CommonDiseaseListViewAdapter(this, listItems);
+        listView.setAdapter(commonDiseaseListViewAdapter);
+
     }
 
 
@@ -53,5 +68,16 @@ public class CommonIllnessActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private static List<Map<String, Object>> getListItems() {
+        List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
+        for(int i = 0; i < SQLOperation.getCommonDiseaseCount(); i++) {
+            Map<String, Object> map = new HashMap<String, Object>();
+            map.put("text", SQLOperation.getCommonDiseaseName(String.valueOf(i+1)));
+            map.put("into", R.drawable.right_arrow);
+            listItems.add(map);
+        }
+        return listItems;
     }
 }
