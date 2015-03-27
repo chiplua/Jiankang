@@ -15,6 +15,8 @@ public class CommonDiseaseDetailCommonActivity extends Activity {
     private static ImageButton backButton = null;
     private static TextView titleName = null;
     private static String titleString = null;
+    private static TextView detailName = null;
+    private static TextView detailDescribe = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +34,14 @@ public class CommonDiseaseDetailCommonActivity extends Activity {
             }
         });
         titleName = (TextView) findViewById(R.id.title_name);
-        titleName.setText(titleString);
+        titleName.setText(R.string.detail);
+        detailName = (TextView) findViewById(R.id.detail_name);
+        detailName.setText(titleString);
+        detailDescribe = (TextView) findViewById(R.id.detail_describe);
+        detailDescribe.setText(SQLOperation.getCommonDiseaseContent(titleString));
+
+
+
     }
 
 

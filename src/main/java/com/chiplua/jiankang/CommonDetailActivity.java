@@ -56,7 +56,7 @@ public class CommonDetailActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_CUSTOM_TITLE);
-        setContentView(R.layout.activity_common_detail);
+        setContentView(R.layout.activity_report_common_detail);
         getWindow().setFeatureInt(Window.FEATURE_CUSTOM_TITLE, R.layout.titlebar);
         selectName = getIntent().getStringExtra("selectName");
 
