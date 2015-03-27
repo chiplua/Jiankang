@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>  
 <color name="translucent_background">#60000000</color>  
+<color name="normal_background">#ccffffff</color>
+<color name="pressed_background">#CCCCCC</color>
 </resources>  

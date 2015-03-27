@@ -58,7 +58,7 @@
                 <Button
                     android:id="@+id/normal_value_button"
                     android:text="正常值："
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
@@ -81,7 +81,7 @@
                 <Button
                     android:id="@+id/clinic_significance_button"
                     android:text="临床意义:"
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
@@ -104,7 +104,7 @@
                 <Button
                     android:id="@+id/matters_attention_button"
                     android:text="注意事项:"
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
@@ -127,7 +127,7 @@
                 <Button
                     android:id="@+id/check_up_button"
                     android:text="检查过程:"
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
@@ -150,7 +150,7 @@
                 <Button
                     android:id="@+id/related_disease_button"
                     android:text="相关疾病:"
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
@@ -173,7 +173,7 @@
                 <Button
                     android:id="@+id/related_symptoms_button"
                     android:text="相关症状:"
-                    android:background="#ccffffff"
+                    android:background="@drawable/detail_button_selector"
                     android:drawableRight="@drawable/right_arrow"
                     android:textSize="30sp"
                     android:gravity="center_vertical"
