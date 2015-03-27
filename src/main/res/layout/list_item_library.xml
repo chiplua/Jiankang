@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:background="@drawable/list_button_select"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="80dp">
 
     <TextView
         android:id="@+id/library_name"
@@ -12,13 +12,15 @@
         android:singleLine="true"
         android:maxEms="8"
         android:ellipsize="end"
+        android:paddingLeft="10dp"
         android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
+        android:paddingRight="10dp"
         android:layout_gravity="center_vertical"
         android:gravity="right|center_vertical">
 

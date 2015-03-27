@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:background="@drawable/list_button_select"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:layout_height="80dp">
 
     <ImageView
         android:id="@+id/image_item"
@@ -16,13 +16,14 @@
         android:id="@+id/library_name"
         android:textSize="30dp"
         android:textColor="#333333"
+        android:paddingLeft="10dp"
         android:layout_gravity="center_vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:layout_gravity="center_vertical"
         android:gravity="right|center_vertical">
 
