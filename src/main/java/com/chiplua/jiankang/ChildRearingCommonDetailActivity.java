@@ -70,6 +70,7 @@ public class ChildRearingCommonDetailActivity extends Activity {
 
     private static String formatString(String inString) {
         inString = inString.replaceAll(selectName+":", "");
+        inString = inString.replaceAll("\\|", "\n"); //替换掉字符串中的所有的“|”，replaceAll替换特殊字符要用\\转义。
         return inString;
     }
 }
