@@ -34,6 +34,14 @@
             android:name=".CommonDiseaseDetailCommonActivity"
             android:label="@string/title_activity_common_disease_detail_common" >
         </activity>
+        <activity
+            android:name=".ChildRearingCommonSecondActivity"
+            android:label="@string/title_activity_child_rearing_common_second" >
+        </activity>
+        <activity
+            android:name=".ChildRearingCommonDetailActivity"
+            android:label="@string/title_activity_child_rearing_common_detail" >
+        </activity>
     </application>
 
 </manifest>

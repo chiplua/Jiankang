@@ -1,0 +1,53 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_background"
+    tools:context="com.chiplua.jiankang.CommonDetailActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#ccffffff"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+        <TextView
+            android:id="@+id/detail_name"
+            android:textColor="#000000"
+            android:textSize="30sp"
+            android:gravity="left"
+            android:singleLine="false"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:background="@android:color/black"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dip"
+            android:layout_margin="10dp" />
+
+        <ScrollView
+            android:id="@+id/detail_list"
+            android:paddingTop="0dp"
+            android:background="#CCCCCC"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:padding="6dp"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/detail_describe"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="25sp"
+                    android:padding="5sp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

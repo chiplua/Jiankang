@@ -16,6 +16,9 @@
     <string name="title_activity_common_second">CommonSecondActivity</string>
     <string name="detail">Detail</string>
     <string name="title_activity_common_detail">CommonDetailActivity</string>
-    <string name="title_activity_common_disease_detail_common">CommonDiseaseDetailCommonActivity
+    <string name="title_activity_common_disease_detail_common">CommonDiseaseDetailCommonActivity</string>
+    <string name="title_activity_child_rearing_common_second">ChildRearingCommonSecondActivity
+    </string>
+    <string name="title_activity_child_rearing_common_detail">ChildRearingCommonDetailActivity
     </string>
 </resources>

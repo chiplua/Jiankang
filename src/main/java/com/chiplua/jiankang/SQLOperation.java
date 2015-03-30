@@ -2,7 +2,6 @@ package com.chiplua.jiankang;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -27,6 +26,11 @@ public class SQLOperation {
     private final static String REPORTDETAILSCONTENT = "content";
     private final static String COMMONDISEASENAME = "name";
     private final static String COMMONDISEASEDESC = "contentDesc";
+    private final static String CHILDREARINGID = "id";
+    private final static String CHILDREARINGNAME = "name";
+    private final static String CHILDREARINGMAPDETAILID = "detail_id";
+    private final static String CHILDREARINGMAPNAME = "name";
+    private final static String CHILDDETAILCONTENT = "content";
 
     private static SQLiteDatabase openDatabase() {
         File dir = new File(DATABASE_PATH);
@@ -70,9 +74,6 @@ public class SQLOperation {
                     data[0] = c.getString(nameIndex);
                     data[1] = c.getString(sortIndex);
                     data[2] = c.getString(idIndex);
-                    //Log.d(TAG, "data[0] = " + data[0]);
-                    //Log.d(TAG, "data[1] = " + data[1]);
-                    //Log.d(TAG, "data[2] = " + data[2]);
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -130,9 +131,6 @@ public class SQLOperation {
                     data[0] = c.getString(caIDIndex);
                     data[1] = c.getString(nameIndex);
                     data[2] = c.getString(lrIDIndex);
-                    Log.d(TAG, "data[0] = " + data[0]);
-                    Log.d(TAG, "data[1] = " + data[1]);
-                    Log.d(TAG, "data[2] = " + data[2]);
                     map.put(data[0], data[1]);
                 } while (c.moveToNext());
                 listItems.add(map);
@@ -169,7 +167,6 @@ public class SQLOperation {
                 }
                 do {
                     data = c.getString(IDIndex);
-                    Log.d(TAG, "data = " + data);
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -204,7 +201,6 @@ public class SQLOperation {
                 }
                 do {
                     data = c.getString(contentIndex);
-                    Log.d(TAG, "data = " + data);
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -239,7 +235,6 @@ public class SQLOperation {
                 }
                 do {
                     data = c.getString(nameIndex);
-                    Log.d(TAG, "data = " + data);
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -274,7 +269,6 @@ public class SQLOperation {
                 }
                 do {
                     data = c.getString(contentIndex);
-                    Log.d(TAG, "data = " + data);
                 } while (c.moveToNext());
             }
         } catch (Exception e) {
@@ -299,6 +293,196 @@ public class SQLOperation {
             return cs.getCount();
         }
         return 0;
+    }
+
+    public static String getChildRearingOutline(String id) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from child_outline where id='"+ id +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int nameIndex;
+                try {
+                    nameIndex = c.getColumnIndexOrThrow(CHILDREARINGNAME);
+                } catch (IllegalArgumentException e1) {
+                    nameIndex = 2;
+                }
+                do {
+                    data = c.getString(nameIndex);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static int getChildRearingCount() {
+        SQLiteDatabase db = openDatabase();
+        String sql = "select * from child_outline";
+        Cursor cs = db.rawQuery(sql, null);
+
+        if (cs.moveToFirst()) {
+            return cs.getCount();
+        }
+        return 0;
+    }
+
+    public static String getChildRearingRelationMapOutlineID(String name) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from child_outline where name='"+ name +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int IDIndex;
+                try {
+                    IDIndex = c.getColumnIndexOrThrow(CHILDREARINGID);
+                } catch (IllegalArgumentException e) {
+                    IDIndex = 1;
+                }
+                do {
+                    data = c.getString(IDIndex);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static List<Map<String, Object>> getChildRearingRelationMap(String outline_id) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String[] data = null;
+        List<Map<String, Object>> listItems = new ArrayList<Map<String, Object>>();
+        try {
+            db = openDatabase();
+            if (db == null)
+                return listItems;
+            String sql = "select * from child_relation_map where outline_id='"+ outline_id +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int detailIDIndex;
+                int nameIndex;
+                Map<String, Object> map = new HashMap<String, Object>();
+                try {
+                    detailIDIndex = c.getColumnIndexOrThrow(CHILDREARINGMAPDETAILID);
+                    nameIndex = c.getColumnIndexOrThrow(CHILDREARINGMAPNAME);
+                } catch (IllegalArgumentException e) {
+                    detailIDIndex = 1;
+                    nameIndex = 3;
+                }
+                do {
+                    data = new String[2];
+                    data[0] = c.getString(detailIDIndex);
+                    data[1] = c.getString(nameIndex);
+                    map.put(data[0], data[1]);
+                } while (c.moveToNext());
+                listItems.add(map);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return listItems;
+    }
+
+    public static String getChildRearingMapDetailID(String name) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from child_relaition_map where name='"+ name +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int detailIDIndex;
+                try {
+                    detailIDIndex = c.getColumnIndexOrThrow(CHILDREARINGMAPDETAILID);
+                } catch (IllegalArgumentException e) {
+                    detailIDIndex = 1;
+                }
+                do {
+                    data = c.getString(detailIDIndex);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
+    }
+
+    public static String getChildRearingDetailsContent(String selectName) {
+        SQLiteDatabase db = null;
+        Cursor c = null;
+        String data = null;
+        try {
+            db = openDatabase();
+            if (db == null)
+                return data;
+            String sql = "select * from child_details where name='"+ selectName +"'";
+            c = db.rawQuery(sql, null);
+            if (c.getCount() > 0 && c.moveToFirst()) {
+                int contentIndex;
+                try {
+                    contentIndex = c.getColumnIndexOrThrow(CHILDDETAILCONTENT);
+                } catch (IllegalArgumentException e) {
+                    contentIndex = 3;
+                }
+                do {
+                    data = c.getString(contentIndex);
+                } while (c.moveToNext());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (c != null) {
+                c.close();
+            }
+            if (db != null) {
+                db.close();
+            }
+        }
+        return data;
     }
 
 }
