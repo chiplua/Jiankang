@@ -48,6 +48,8 @@ public class JiankangActivity extends Activity {
         backButton.setVisibility(View.GONE);
         titleName = (TextView) findViewById(R.id.title_name);
         titleName.setText(R.string.healty_library);
+
+        SQLOperation.initExtraDB(this);
     }
 
 

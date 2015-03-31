@@ -1,9 +1,12 @@
 package com.chiplua.jiankang;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,6 +19,7 @@ public class SQLOperation {
     private final static String TAG = "SQLOperation";
     private final static String DATABASE_NAME = "health_library.db";
     private final static String DATABASE_PATH = "/data/data/" + JiankangActivity.PACKAGE_NAME + "/databases";
+    public final static int DATABASE_VERSION = 1;
     private final static String REPORTOUTLINEID = "id";
     private final static String REPORTOUTLINENAME = "name";
     private final static String REPORTOUTLINESORT = "sort";
@@ -485,4 +489,53 @@ public class SQLOperation {
         return data;
     }
 
+    public static void initExtraDB(Context context) {
+        try {
+            File dir = new File(DATABASE_PATH);
+            if (!dir.exists()) {
+                dir.mkdir();
+            }
+            String databaseFileName = DATABASE_PATH + "/" + DATABASE_NAME;
+            File databaseFile = new File(databaseFileName);
+            if (!databaseFile.exists()) {
+                FileOutputStream fos = new FileOutputStream(databaseFileName);
+                byte[] buffer = new byte[8192];
+                int count = 0;
+                InputStream is = context.getResources().openRawResource(R.raw.health_library);
+                while ((count = is.read(buffer)) > 0) {
+                    fos.write(buffer, 0, count);
+                }
+                fos.close();
+                is.close();
+                SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DATABASE_PATH + "/"
+                        + DATABASE_NAME, null);
+                db.setVersion(DATABASE_VERSION);
+                db.close();
+            } else {
+                SQLiteDatabase oldDb = SQLiteDatabase.openOrCreateDatabase(DATABASE_PATH + "/"
+                        + DATABASE_NAME, null);
+                if (oldDb.getVersion() < DATABASE_VERSION) {
+                    oldDb.close();
+                    databaseFile.delete();
+                    FileOutputStream fos = new FileOutputStream(databaseFileName);
+                    byte[] buffer = new byte[8192];
+                    int count = 0;
+                    InputStream is = context.getResources().openRawResource(R.raw.health_library);
+                    while ((count = is.read(buffer)) > 0) {
+                        fos.write(buffer, 0, count);
+                    }
+                    fos.close();
+                    is.close();
+                    SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase(DATABASE_PATH + "/"
+                            + DATABASE_NAME, null);
+                    db.setVersion(DATABASE_VERSION);
+                    db.close();
+                } else {
+                    oldDb.close();
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
