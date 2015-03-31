@@ -23,11 +23,11 @@
         <activity android:name=".FavoriteActivity" >
         </activity>
         <activity
-            android:name=".CommonSecondActivity"
-            android:label="@string/title_activity_common_second" >
+            android:name=".LaboratoryAssistantSubCommonActivity"
+            android:label="@string/title_activity_common_sub" >
         </activity>
         <activity
-            android:name=".CommonDetailActivity"
+            android:name=".LaboratoryAssistantCommonDetailActivity"
             android:label="@string/title_activity_common_detail" >
         </activity>
         <activity

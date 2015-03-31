@@ -17,13 +17,13 @@ import java.util.Map;
 
 
 public class LaboratoryAssistantActivity extends Activity {
-    private final static String TAG = "LaboratoryAssistantActivity";
+    private final static String TAG = "LABORATORYASSISTANTACTIVITY";
     private static TextView titleText = null;
     private static ImageButton backButton = null;
     private static ListView listView = null;
     private static List<Map<String, Object>> listItems = null;
-    private static ListViewAdapter listViewAdapter = null;
-    private static List<Map<String, Object>> xyz = null;
+    private static LaboratoryAssistantListViewAdapter laboratoryAssistantListViewAdapter = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,15 +43,8 @@ public class LaboratoryAssistantActivity extends Activity {
         });
         listView = (ListView) findViewById(R.id.list_item_library);
         listItems = getListItems();
-        listViewAdapter = new ListViewAdapter(this, listItems);
-        listView.setAdapter(listViewAdapter);
-
-        /*xyz = SQLOperation.getReportRelationMap(String.valueOf(1));
-        for (Map<String, Object> m : xyz) {
-            for (String k : m.keySet()) {
-                Log.d(TAG, "key: " + k + " value: " + m.get(k));
-            }
-        }*/
+        laboratoryAssistantListViewAdapter = new LaboratoryAssistantListViewAdapter(this, listItems);
+        listView.setAdapter(laboratoryAssistantListViewAdapter);
     }
 
 
@@ -61,8 +54,8 @@ public class LaboratoryAssistantActivity extends Activity {
 
         for(int i = 0; i < SQLOperation.getLaboratorAssistantCount(); i++) {
             Map<String, Object> map = new HashMap<String, Object>();
-            map.put("text", SQLOperation.getReportOutline(String.valueOf(i+1))[0]);       //图片资源
-            map.put("into", R.drawable.right_arrow);       //物品标题
+            map.put("text", SQLOperation.getReportOutline(String.valueOf(i+1))[0]);
+            map.put("into", R.drawable.right_arrow);
             listItems.add(map);
         }
         return listItems;

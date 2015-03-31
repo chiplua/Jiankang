@@ -15,8 +15,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 
-public class CommonDetailActivity extends Activity {
-    private static final String TAG = "CommonDetailActivity";
+public class LaboratoryAssistantCommonDetailActivity extends Activity {
+    private static final String TAG = "LABORATORYASSISTANTCOMMONDETAILACTIVITY";
     private static TextView detailTitle = null;
     private static TextView detailName = null;
     private static TextView detailDescribe = null;
@@ -232,6 +232,7 @@ public class CommonDetailActivity extends Activity {
         inString = inString.replaceAll("<p>", "");
         inString = inString.replaceAll("</P>", "\n");
         inString = inString.replaceAll("</p>", "\n");
+        inString = inString.replaceAll("\\&nbsp\\;", "");
         inString = inString.replaceAll("\t", "");
         inString = inString.replaceAll("\r", "");
         inString = inString.replaceAll(" ", "");

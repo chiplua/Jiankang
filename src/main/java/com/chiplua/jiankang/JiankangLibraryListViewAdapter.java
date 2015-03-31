@@ -2,7 +2,6 @@ package com.chiplua.jiankang;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,20 +13,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Created by chiplua_client on 15-3-25.
+ * Created by chiplua_client on 15-3-17.
  */
-public class ListViewSecondAdapter extends BaseAdapter {
-    private static final String TAG = "ListViewSecondAdapter";
+public class JiankangLibraryListViewAdapter extends BaseAdapter {
+    private static final String TAG = "JIANKANGLIBRARYLISTVIEWADAPTER";
     private static Context mContext = null;
     private List<Map<String, Object>> mListItems;
     private LayoutInflater listContainer;
 
     public final class ListItemView {
+        public ImageView image;
         public TextView text;
         public ImageView into;
     }
 
-    public ListViewSecondAdapter(Context context, List<Map<String, Object>> listItems) {
+    public JiankangLibraryListViewAdapter(Context context, List<Map<String, Object>> listItems) {
         mContext = context;
         mListItems = listItems;
         listContainer= LayoutInflater.from(mContext);
@@ -53,8 +53,9 @@ public class ListViewSecondAdapter extends BaseAdapter {
         ListItemView  listItemView = null;
         if (convertView == null) {
             listItemView = new ListItemView();
-            convertView = listContainer.inflate(R.layout.list_item_library, null);
+            convertView = listContainer.inflate(R.layout.list_item, null);
 
+            listItemView.image = (ImageView) convertView.findViewById(R.id.image_item);
             listItemView.text = (TextView) convertView.findViewById(R.id.library_name);
             listItemView.into = (ImageView) convertView.findViewById(R.id.into_item);
 
@@ -63,7 +64,8 @@ public class ListViewSecondAdapter extends BaseAdapter {
             listItemView = (ListItemView)convertView.getTag();
         }
 
-        listItemView.text.setText((String) mListItems.get(position).get("text"));
+        listItemView.image.setBackgroundResource((Integer) mListItems.get(position).get("image"));
+        listItemView.text.setText((Integer) mListItems.get(position).get("text"));
         listItemView.into.setBackgroundResource((Integer) mListItems.get(position).get("into"));
 
         convertView.setOnClickListener(new View.OnClickListener() {
@@ -71,25 +73,24 @@ public class ListViewSecondAdapter extends BaseAdapter {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 int id = v.getId();
-                String selectName = (String)mListItems.get(position).get("text");
-                String lrID;
-                Log.d(TAG, "U pressed is " + selectName);
-                Log.d(TAG, "id = " + id + " position = " + position);
-                lrID = SQLOperation.getReportRelationMapLRID(selectName);
-                Log.d(TAG, "lrID is " + lrID);
-
-                Intent intentCommon = new Intent();
-                intentCommon.putExtra("selectName", selectName);
-                intentCommon.setClass(mContext, CommonDetailActivity.class);
-                mContext.startActivity(intentCommon);
-
-                /*List<Map<String, Object>> xyz = SQLOperation.getReportRelationMap(lrID);
-                for (Map<String, Object> m : xyz) {
-                    for (String k : m.keySet()) {
-                        Log.d(TAG, "key: " + k + " value: " + m.get(k));
-                    }
-                }*/
-
+                switch (position) {
+                case 0:
+                    intent.setClass(mContext, LaboratoryAssistantActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                case 1:
+                    intent.setClass(mContext, CommonDiseaseActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                case 2:
+                    intent.setClass(mContext, ChildRearingActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                case 3:
+                    intent.setClass(mContext, FavoriteActivity.class);
+                    mContext.startActivity(intent);
+                    break;
+                }
             }
         });
         return convertView;

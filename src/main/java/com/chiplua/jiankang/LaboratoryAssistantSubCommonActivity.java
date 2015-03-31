@@ -17,13 +17,13 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CommonSecondActivity extends Activity {
-    private static final String TAG = "CommonSecondActivity";
+public class LaboratoryAssistantSubCommonActivity extends Activity {
+    private static final String TAG = "LABORATORYASSISTANTSUBCOMMONACTIVITY";
     private static TextView titleText = null;
     private static ImageButton backButton = null;
     private static List<Map<String, Object>> listItems = null;
     private static ListView listView = null;
-    private static ListViewSecondAdapter listViewSecondAdapter = null;
+    private static LaboratoryAssistantCommonSubListViewAdapter laboratoryAssistantCommonSubListViewAdapter = null;
     private static String selectName = null;
     private static String lrID = null;
     @Override
@@ -48,8 +48,8 @@ public class CommonSecondActivity extends Activity {
 
         listView = (ListView) findViewById(R.id.list_items);
         listItems = getListItems(lrID);
-        listViewSecondAdapter = new ListViewSecondAdapter(this, listItems);
-        listView.setAdapter(listViewSecondAdapter);
+        laboratoryAssistantCommonSubListViewAdapter = new LaboratoryAssistantCommonSubListViewAdapter(this, listItems);
+        listView.setAdapter(laboratoryAssistantCommonSubListViewAdapter);
     }
 
     private List<Map<String, Object>> getListItems(String lr) {

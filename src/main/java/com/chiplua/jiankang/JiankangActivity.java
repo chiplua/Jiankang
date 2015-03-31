@@ -23,9 +23,12 @@ public class JiankangActivity extends Activity {
     private static ImageButton backButton = null;
     private static TextView titleName = null;
     private LayoutInflater inflater = null;
-    private LibraryListViewAdapter listViewAdapter = null;
+    private JiankangLibraryListViewAdapter jiankangListViewAdapter = null;
     private List<Map<String, Object>> listItems;
-    private String[] libraryName = {"化验单助手", "常见病介绍", "育儿介绍", "收藏夹"};
+    private Integer[] libraryName = {R.string.laboratory_assistant_introduce,
+                                    R.string.common_disease_introduce,
+                                    R.string.child_rearing_introduce,
+                                    R.string.favorite_files};
     private Integer[] imgIDs = {R.drawable.icon_test, R.drawable.icon_common_ill,
                                 R.drawable.icon_child, R.drawable.icon_favorite};
 
@@ -38,8 +41,8 @@ public class JiankangActivity extends Activity {
 
         libraryList = (ListView) findViewById(R.id.library_list);
         listItems = getListItems();
-        listViewAdapter = new LibraryListViewAdapter(this, listItems);
-        libraryList.setAdapter(listViewAdapter);
+        jiankangListViewAdapter = new JiankangLibraryListViewAdapter(this, listItems);
+        libraryList.setAdapter(jiankangListViewAdapter);
 
         backButton = (ImageButton) findViewById(R.id.back);
         backButton.setVisibility(View.GONE);

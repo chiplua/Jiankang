@@ -14,4 +14,8 @@
     <string name="child_rearing">育兒介紹</string>
     <string name="favorite_file">收藏夾</string>
     <string name="detail">詳情</string>
+    <string name="laboratory_assistant_introduce">化驗單助手</string>
+    <string name="common_disease_introduce">常見病介紹</string>
+    <string name="child_rearing_introduce">育兒介紹</string>
+    <string name="favorite_files">收藏夾</string>
 </resources>

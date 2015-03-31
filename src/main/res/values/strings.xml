@@ -13,12 +13,14 @@
     <string name="common_illness">Common illness</string>
     <string name="child_rearing">Child rearing</string>
     <string name="favorite_file">Favorite file</string>
-    <string name="title_activity_common_second">CommonSecondActivity</string>
+    <string name="title_activity_common_sub">LaboratoryAssistantSubCommonActivity</string>
     <string name="detail">Detail</string>
-    <string name="title_activity_common_detail">CommonDetailActivity</string>
+    <string name="title_activity_common_detail">LaboratoryAssistantSubCommonActivity</string>
     <string name="title_activity_common_disease_detail_common">CommonDiseaseDetailCommonActivity</string>
-    <string name="title_activity_child_rearing_common_second">ChildRearingCommonSecondActivity
-    </string>
-    <string name="title_activity_child_rearing_common_detail">ChildRearingCommonDetailActivity
-    </string>
+    <string name="title_activity_child_rearing_common_second">ChildRearingCommonSecondActivity</string>
+    <string name="title_activity_child_rearing_common_detail">ChildRearingCommonDetailActivity</string>
+    <string name="laboratory_assistant_introduce">Laboratory Assistant</string>
+    <string name="common_disease_introduce">Common disease introduce</string>
+    <string name="child_rearing_introduce">Child rearing introduce</string>
+    <string name="favorite_files">Favorite files</string>
 </resources>

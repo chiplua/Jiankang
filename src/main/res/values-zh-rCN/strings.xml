@@ -12,4 +12,8 @@
     <string name="child_rearing">育儿介绍</string>
     <string name="favorite_file">收藏夹</string>
     <string name="detail">详情</string>
+    <string name="laboratory_assistant_introduce">化验单助手</string>
+    <string name="common_disease_introduce">常见病介绍</string>
+    <string name="child_rearing_introduce">育儿介绍</string>
+    <string name="favorite_files">收藏夹</string>
 </resources>

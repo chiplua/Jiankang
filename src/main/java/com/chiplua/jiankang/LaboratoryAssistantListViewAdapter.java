@@ -2,7 +2,6 @@ package com.chiplua.jiankang;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,8 +15,8 @@ import java.util.Map;
 /**
  * Created by chiplua_client on 15-3-19.
  */
-public class ListViewAdapter extends BaseAdapter {
-    private static final String TAG = "ListViewAdapter";
+public class LaboratoryAssistantListViewAdapter extends BaseAdapter {
+    private static final String TAG = "LABORATORYASSISTANTLISTVIEWADAPTER";
     private static Context mContext = null;
     private List<Map<String, Object>> mListItems;
     private LayoutInflater listContainer;
@@ -27,7 +26,7 @@ public class ListViewAdapter extends BaseAdapter {
         public ImageView into;
     }
 
-    public ListViewAdapter(Context context, List<Map<String, Object>> listItems) {
+    public LaboratoryAssistantListViewAdapter(Context context, List<Map<String, Object>> listItems) {
         mContext = context;
         mListItems = listItems;
         listContainer= LayoutInflater.from(mContext);
@@ -73,25 +72,15 @@ public class ListViewAdapter extends BaseAdapter {
                 int id = v.getId();
                 String selectName = (String)mListItems.get(position).get("text");
                 String lrID;
-                Log.d(TAG, "U pressed is " + selectName);
-                Log.d(TAG, "id = " + id + " position = " + position);
+                //Log.d(TAG, "U pressed is " + selectName);
+                //Log.d(TAG, "id = " + id + " position = " + position);
                 lrID = SQLOperation.getReportRelationMapLRID(selectName);
-                Log.d(TAG, "lrID is " + lrID);
+                //Log.d(TAG, "lrID is " + lrID);
 
                 Intent intentCommon = new Intent();
                 intentCommon.putExtra("selectName", selectName);
-                intentCommon.setClass(mContext, CommonSecondActivity.class);
+                intentCommon.setClass(mContext, LaboratoryAssistantSubCommonActivity.class);
                 mContext.startActivity(intentCommon);
-
-/*
-                List<Map<String, Object>> xyz = SQLOperation.getReportRelationMap(lrID);
-                for (Map<String, Object> m : xyz) {
-                    for (String k : m.keySet()) {
-                        Log.d(TAG, "key: " + k + " value: " + m.get(k));
-                    }
-                }
-*/
-
             }
         });
         return convertView;
