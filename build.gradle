@@ -6,7 +6,6 @@ android {
 
     defaultConfig {
         applicationId "com.chiplua.jiankang"
-        minSdkVersion 18
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
